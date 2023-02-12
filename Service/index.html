@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<HTML>
+    <HEAD>
+        <STYLE type="text/css">
+            #content {
+            FONT-SIZE: 0.7em; PADDING-BOTTOM: 2em; MARGIN-LEFT: 30px
+            }
+            BODY {
+            MARGIN-TOP: 0px; MARGIN-LEFT: 0px; COLOR: #000000; FONT-FAMILY: Verdana; BACKGROUND-COLOR: white
+            }
+            P {
+            MARGIN-TOP: 0px;
+            MARGIN-BOTTOM: 12px; COLOR: #000000; FONT-FAMILY: Verdana
+            }
+            PRE {
+            BORDER-RIGHT: #f0f0e0 1px solid;
+            PADDING-RIGHT: 5px;
+            BORDER-TOP: #f0f0e0 1px solid;
+            MARGIN-TOP: -5px;
+            PADDING-LEFT: 5px;
+            FONT-SIZE: 1.2em;
+            PADDING-BOTTOM: 5px;
+            BORDER-LEFT: #f0f0e0 1px solid;
+            PADDING-TOP: 5px;
+            BORDER-BOTTOM: #f0f0e0 1px solid;
+            FONT-FAMILY: Courier New;
+            BACKGROUND-COLOR: #e5e5cc
+            }
+            .heading1 {
+            MARGIN-TOP: 0px;
+            PADDING-LEFT: 15px;
+            FONT-WEIGHT: normal;
+            FONT-SIZE: 26px;
+            MARGIN-BOTTOM: 0px;
+            PADDING-BOTTOM: 3px;
+            MARGIN-LEFT: -30px;
+            WIDTH: 100%;
+            COLOR: #ffffff;
+            PADDING-TOP: 10px;
+            FONT-FAMILY: Tahoma;
+            BACKGROUND-COLOR: #003366
+            }
+            .heading2 {
+            MARGIN-TOP: 0px;
+            PADDING-LEFT: 15px;
+            FONT-WEIGHT: normal;
+            FONT-SIZE: 15px;
+            MARGIN-BOTTOM: 0px;
+            PADDING-BOTTOM: 3px;
+            MARGIN-LEFT: -30px;
+            WIDTH: 100%;
+            COLOR: #ffffff;
+            PADDING-TOP: 10px;
+            FONT-FAMILY: Tahoma;
+            BACKGROUND-COLOR: #003366
+            }
+            .intro {
+            MARGIN-LEFT: -15px
+            }
+            
+            table.GeneratedTable {
+            table-layout: fixed;
+            width: 100%;
+            background-color: #ffffff;
+            border-collapse: collapse;
+            border-width: 2px;
+            border-color: #ffcc00;
+            border-style: dotted;
+            color: #000000;
+            FONT-SIZE: 1.2em;
+            FONT-FAMILY: Courier New;
+            }
+
+            table.GeneratedTable td, table.GeneratedTable th {
+            border-width: 2px;
+            border-color: #ffcc00;
+            border-style: dotted;
+            padding: 3px;
+            word-wrap:break-word;
+            }
+
+            table.GeneratedTable thead {
+            background-color: #ffcc00;
+            }
+
+            .td {
+            width: 15%;
+            }
+        </STYLE>
+        <TITLE>PcPos REST Service</TITLE>
+    </HEAD>
+    <BODY>
+        <DIV id="content">
+            <P class="heading1">Sadad PcPos REST Service</P>
+            <br />
+
+            <P class="intro">Get Info</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Get information of service.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/getinfo">http://localhost:8000/api/getinfo</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/getinfo">https://localhost:8001/api/getinfo</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Get</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X GET http://localhost:8000/api/getinfo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Get Devices</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Get online devices.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/getdevices/0/0">http://localhost:8000/api/getdevices/0/0</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/getdevices/0/0">https://localhost:8001/api/getdevices/0/0</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Get</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X GET http://localhost:8000/api/getdevices/0/0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Get Serial Ports</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Get reserved serial ports name.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/getserialports">http://localhost:8000/api/getserialports</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/getserialports">https://localhost:8001/api/getserialports</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Get</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X GET http://localhost:8000/api/getserialports</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Sale Transaction</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Do sale transaction.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/sale">http://localhost:8000/api/sale</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/sale">https://localhost:8001/api/sale</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","MultiAccount":"1:10,2:30,4:40,6:20","DivideType":"3","Amount":"50000","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","MultiAccount":"1:10,2:30,4:40,6:20","DivideType":"3","Amount":"50000","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}' http://localhost:8000/api/sale</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Abort Transaction</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Abort the transaction.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/abort">http://localhost:8000/api/abort</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/abort">https://localhost:8001/api/abort</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704"}' http://localhost:8000/api/abort</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Device Info</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Get information from device or config file. The value of 'DeviceType' in request body or config file of Sadad REST service is important in this method.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/deviceinfo">http://localhost:8000/api/deviceinfo</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/deviceinfo">https://localhost:8001/api/deviceinfo</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"SerialPort":"COM7","ConnectionType":"Serial","DeviceType":"1","OrderId":"9512","TerminalId":"C0000301","MerchantId":"000000000000301","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D97"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"SerialPort":"COM7","ConnectionType":"Serial","DeviceType":"1","OrderId":"9512","TerminalId":"C0000301","MerchantId":"000000000000301","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D97"}' http://localhost:8000/api/deviceinfo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Bill Payment Transaction</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Do bill payment transaction.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/billpayment">http://localhost:8000/api/billpayment</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/billpayment">https://localhost:8001/api/billpayment</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","BillId":"6039628301226","PayId":"189840835","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","BillId":"6039628301226","PayId":"189840835","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}' http://localhost:8000/api/billpayment</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Identified Inquiry Transaction</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Do identified inquiry transaction.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/identifiedinquiry">http://localhost:8000/api/identifiedinquiry</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/identifiedinquiry">https://localhost:8001/api/identifiedinquiry</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","InquiryId":"139522000000014335","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","InquiryId":"139522000000014335","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}' http://localhost:8000/api/identifiedinquiry</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Government Identified Inquiry Transaction</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Do government identified inquiry transaction.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/governmentidentifiedinquiry">http://localhost:8000/api/governmentidentifiedinquiry</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/governmentidentifiedinquiry">https://localhost:8001/api/governmentidentifiedinquiry</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","InquiryId":"102110000220000121100000000000","Amount":"110000","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","InquiryId":"102110000220000121100000000000","Amount":"110000","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}' http://localhost:8000/api/governmentidentifiedinquiry</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Transacation Report</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Get report of last transactions.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/transactionreport">http://localhost:8000/api/transactionreport</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/transactionreport">https://localhost:8001/api/transactionreport</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","Count":"5","TransactionType":"1","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","Count":"5","TransactionType":"1","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}' http://localhost:8000/api/transactionreport</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Get Card Info</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Get hashed (SHA-256) card information.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/cardinfo">http://localhost:8000/api/cardinfo</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/cardinfo">https://localhost:8001/api/cardinfo</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}' http://localhost:8000/api/cardinfo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">CommodityBasket Transaction</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Do commodity basket transaction.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/commoditybasket">http://localhost:8000/api/commoditybasket</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/commoditybasket">https://localhost:8001/api/commoditybasket</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}' http://localhost:8000/api/commoditybasket</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">FoodSafety Transaction</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Do food safety transaction.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/foodsafety">http://localhost:8000/api/foodsafety</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/foodsafety">https://localhost:8001/api/foodsafety</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td>{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '{"DeviceIp":"172.24.32.212","DevicePort":"8888","ConnectionType":"Lan","RequestId":"6ADDA412-E5AA-40E0-8B26-C7C2DF8D9704","OrderId":"951236547","RetryTimeOut":"5000,5000,5000","ResponseTimeout":"180000,5000,5000"}' http://localhost:8000/api/foodsafety</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <P class="intro">Restart</P>
+            <table class="GeneratedTable">
+                <thead>
+                    <tr>
+                        <td class="td">Decription</td>
+                        <td>Restart the hosted REST service.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td">HTTP Address</td>
+                        <td><a href="http://localhost:8000/api/restart">http://localhost:8000/api/restart</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTPS Address</td>
+                        <td><a href="https://localhost:8001/api/restart">https://localhost:8001/api/restart</a></td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Method</td>
+                        <td>Post</td>
+                    </tr>
+                    <tr>
+                        <td class="td">HTTP Header</td>
+                        <td>Content-Type: application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Body</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td">Curl Sample</td>
+                        <td>curl -H "Content-Type: application/x-www-form-urlencoded" -X POST -d '' http://localhost:8000/api/restart</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+        </DIV>
+    </BODY>
+</HTML>

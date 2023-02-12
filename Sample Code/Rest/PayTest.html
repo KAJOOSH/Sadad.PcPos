@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello PCPOS</title>
+    <script src="jquery-1.10.2.min.js"></script>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div>
+        <section id="Info">
+            <div>Base URL:</div>
+            <input type="text" placeholder="URL" value="http://localhost:8000/api/" id="pcpos_base_url" style="font-size:10pt; width:310px; height:16px" />
+
+            <div>
+                <br />
+                Request:
+                <select placeholder="Command Name" id="CommandName" style="width:100px" onchange="commandChange()">
+                    <option value="Abort">Abort</option>
+                    <option value="Sale">Sale</option>
+                </select>
+
+                <br />
+                <input type="text" placeholder="URL" value="http://localhost:8000/api/Abort" id="pcpos_url" style="font-size:10pt; width:310px; height:16px" />
+            </div>
+            
+            <div>
+                <br />Conncection Type (Lan/Serial):</div>
+            <select placeholder="Conncection Type" id="ConnectionType" style="width:100px" onchange="change()">
+                <option value="Lan">Lan</option>
+                <option value="Serial">Serial</option>
+            </select>
+
+            <div id="LanSelected">
+                <table class="GeneratedTable">
+                    <thead>
+                        <tr>
+                            <td>Device (POS) Ip</td>
+                            <td>Device Port</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Device Ip" id="DeviceIp" />
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Device Port" value="8888" id="DevicePort" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="SerialSelected" style="display:none">
+                <table class="GeneratedTable">
+                    <thead>
+                        <tr>
+                            <td>Serial Port</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Serial Port" value="COMx" id="SerialPort" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br />
+
+            <div id="transactionFields" style="display:none">
+                <div>Device Type:</div>
+                <select placeholder="Device Type" id="DeviceType" style="width:100px" onchange="deviceChange()">
+                    <option value="BlueBird">BlueBird</option>
+                    <option value="Magic">Magic</option>
+                </select>
+                <div id="MagicSelected" style="display:none">
+                    <div>Terminal Id:</div>
+                    <input type="text" placeholder="Terminal Id" value="001" id="TerminalId" />
+                    <div>Merchant Id:</div>
+                    <input type="text" placeholder="Merchant Id" id="MerchantId" />
+                </div>
+                <br />
+
+                <div id="BlueBirdSelected">
+                    <!--<input type="text" placeholder="Conncection Type" value="Lan" id="ConnectionType" />-->
+                    <input type="checkbox" name="Is Multi-Account" id="chbMultiAccount" onchange="chbChange()" checked="checked" />Is Multi-Account<br />
+                    <div id="MultiAccountDiv">
+                        <table class="GeneratedTable">
+                            <thead>
+                                <tr>
+                                    <td>Divide Type</td>
+                                    <td>Multi-Account Data</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" placeholder="Divide Type" value="3" id="DivideType" />
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Multi-Account" value="1:10,2:30,4:40,3:20" id="MultiAccount" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                </div>
+
+                <div id="amountDiv">
+                    <table class="GeneratedTable">
+                        <thead>
+                            <tr>
+                                <td>Amount (Rial)</td>
+                                <td>Order Id</td>
+                                <td>Sale Id</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="text" placeholder="Amount" value="10000" id="Amount" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="Order Id" value="971236547" id="OrderId" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="Sale Id" value="971236547" id="SaleId" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <br />
+            <button id="saleAjax">Ajax Call</button>
+            <button id="saleXHR">XHR Call</button>
+        </section>
+        <div>Result:</div>
+        <section id="result"></section>
+    </div>
+</body>
+
+<script>
+
+    function chbChange() {
+        var multiAccountSelected = $('#chbMultiAccount')[0].checked;
+
+        if (multiAccountSelected) {
+            $('#MultiAccountDiv').show();
+        }
+        else {
+            $('#MultiAccountDiv').hide();
+        }
+    }
+
+    function change() {
+        var selected = $('#ConnectionType').val();
+
+        if (selected === "Lan") {
+            $('#LanSelected').show();
+            $('#SerialSelected').hide();
+        }
+        else {
+            $('#LanSelected').hide();
+            $('#SerialSelected').show();
+        }
+    }
+
+    function deviceChange() {
+        var selected = $('#DeviceType').val();
+
+        if (selected === "BlueBird") {
+            $('#BlueBirdSelected').show();
+            $('#MagicSelected').hide();
+            //$('#ConnectionType').val("Lan");
+        }
+        else if (selected === "Magic") {
+            $('#BlueBirdSelected').hide();
+            $('#MagicSelected').show();
+            $('#ConnectionType').val("Serial");
+        }
+        change();
+    }
+
+    function commandChange() {
+        var selected = $('#CommandName').val();
+
+        if (selected === "Abort") {
+            $('#pcpos_url').val($('#pcpos_base_url').val() + selected);
+            $('#transactionFields').hide();
+        }
+        else if (selected === "Sale") {
+            $('#pcpos_url').val($('#pcpos_base_url').val() + selected);
+            $('#transactionFields').show();
+        }
+        change();
+    }
+
+
+    var createRequestBody = function () {
+        var reqParams = new Object();
+        //alert($('#DeviceIp').val());
+        reqParams.ConnectionType = $('#ConnectionType').val();
+        if (reqParams.ConnectionType === "Lan") {
+            reqParams.DeviceIp = $('#DeviceIp').val();
+            reqParams.DevicePort = $('#DevicePort').val();
+        } else {
+            reqParams.SerialPort = $('#SerialPort').val();
+        }
+
+        var multiAccountSelected = $('#chbMultiAccount')[0].checked;
+        if (multiAccountSelected) {
+            reqParams.MultiAccount = $('#MultiAccount').val();
+            reqParams.DivideType = $('#DivideType').val();
+        }
+        reqParams.Amount = $('#Amount').val();
+        reqParams.OrderId = $('#OrderId').val();
+        reqParams.SaleId = $('#SaleId').val();
+
+        // Check device type
+        var selected = $('#DeviceType').val();
+        if (selected == "BlueBird") {
+            reqParams.DeviceType = "0";
+        }
+        else if (selected == "Magic") {
+            reqParams.DeviceType = "1";
+            reqParams.TerminalId = $('#TerminalId').val();
+            reqParams.MerchantId = $('#MerchantId').val();
+        }
+
+        return reqParams;
+    }
+
+    var doPCPOS = function () {
+
+        var reqParams = createRequestBody();
+
+        $('#result').empty();
+        $.ajax({
+            type: "post",
+            url: $('#pcpos_url').val(),
+            //url: "http://localhost:8000/api/Sale",
+            data: JSON.stringify(reqParams),
+            contentType: "application/x-www-form-urlencoded",
+            dataType: "json",
+            crossDomain: true,
+            timeout: 120 * 1000,
+            success: ajaxSuccess,
+            failure: function (errMsg) {
+                alert(errMsg);
+            }
+        });
+    }
+
+    var ajaxSuccess = function (data) {
+        $('#result').empty();
+        $('#result').append(JSON.stringify(data, null, "\t"));
+    }
+
+    function callOtherDomain() {
+
+        var reqParams = createRequestBody();
+
+        var xhr = new XMLHttpRequest();
+        var url = $('#pcpos_url').val();
+        //var url = 'http://localhost:8000/api/Sale';
+        var bodyJ = JSON.stringify(reqParams);
+
+        if (xhr) {
+            xhr.open('POST', url, true);
+            //xhr.setRequestHeader('X-PINGOTHER', 'pingpong');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    console.log(xhr.response); //Outputs a DOMString by default
+                    $('#result').empty();
+                    $('#result').append(xhr.response);
+                };
+            };
+            xhr.send(bodyJ);
+        }
+    }
+
+    $('#saleAjax').click(doPCPOS);
+    $('#saleXHR').click(callOtherDomain);
+
+</script>
+</html>
