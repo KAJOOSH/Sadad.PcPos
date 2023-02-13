@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Modems>
+    <Serial>
+      <Name>COM1</Name>
+      <!-- BlueBird = 0, Magic = 1, Bitel = 2, Pax = 3, Castle = 4 -->
+      <DeviceType>2</DeviceType>
+      <!-- Time to delay in milisecond between sending byte data. Uses in Bitel. -->
+      <!-- 1200, 2400, 4800, 7200, 9600, 14400, 19200, 38400, 57600, 115200 -->
+      <BaudRate>115200</BaudRate>
+      <!-- None, Odd, Even, Mark, Space -->
+      <Parity>None</Parity>
+      <!-- 5 to 8 -->
+      <DataBits>8</DataBits>
+      <!-- None, One, Two, OnePointFive -->
+      <StopBits>One</StopBits>
+      <!-- None, XOnXOff, RequestToSend, RequestToSendXOnXOff -->
+      <Handshake>None</Handshake>
+      <!-- 10 to 180000 or higher -->
+      <Timeout>180000</Timeout>
+    </Serial>
+    <Lan>
+      <!-- BlueBird = 0, Magic = 1, Bitel = 2, Pax = 3, Castle = 4 -->
+      <DeviceType>0</DeviceType>
+      <IP>172.24.32.186</IP>
+      <Port>8888</Port>
+      <!-- 10 to 180000 or higher -->
+      <Timeout>180000</Timeout>
+    </Lan>
+  </Modems>
+  <Transactions>
+    <Sale>
+      <IsAmountRequired>true</IsAmountRequired>
+      <IsSaleIdRequired>false</IsSaleIdRequired>
+      <IsOrderIdRequired>false</IsOrderIdRequired>
+      <IsMultiAccount>false</IsMultiAccount>
+      <MaxIban>10</MaxIban>
+      <MinAmount>1000</MinAmount>
+    </Sale>
+    <Bill>
+      <IsAmountRequired>false</IsAmountRequired>
+      <IsBillIdRequired>true</IsBillIdRequired>
+      <IsPayIdRequired>true</IsPayIdRequired>
+      <IsOrderIdRequired>false</IsOrderIdRequired>
+      <MinAmount>1000</MinAmount>
+    </Bill>
+    <Inquiry>
+      <IsAmountRequired>false</IsAmountRequired>
+      <IsSaleIdRequired>true</IsSaleIdRequired>
+      <IsOrderIdRequired>false</IsOrderIdRequired>
+      <MinAmount>1000</MinAmount>
+    </Inquiry>
+    <Government>
+      <IsAmountRequired>true</IsAmountRequired>
+      <IsSaleIdRequired>true</IsSaleIdRequired>
+      <IsOrderIdRequired>false</IsOrderIdRequired>
+      <IsMultiSaleId>true</IsMultiSaleId>
+      <MaxSaleId>10</MaxSaleId>
+      <MinAmount>1000</MinAmount>
+    </Government>
+  </Transactions>
+  <WebServices>
+    <URLs>
+      <URL>
+        <Name>AddData</Name>
+        <Address>http://172.24.34.67:9150/api/TerminalAddData/Import</Address>
+      </URL>
+    </URLs>
+    <Magic>
+      <IsMagicUsedWithWebService>true</IsMagicUsedWithWebService>
+    </Magic>
+  </WebServices>
+</Config>
